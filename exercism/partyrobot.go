@@ -16,7 +16,8 @@ func AssignTable(name string, table int, neighbor, direction string, distance fl
 	tableAssignMsg := fmt.Sprintf("You have been assigned to table %03d.", table)
 	tableDirMsg := fmt.Sprintf("Your table is %s, exactly %.1f meters from here.", direction, distance)
 	neighborMsg := fmt.Sprintf("You will be sitting next to %s.", neighbor)
-	return fmt.Sprintf("%s\n%s %s\n%s", welcomeMsg, tableAssignMsg, tableDirMsg, neighborMsg)
+	msg := fmt.Sprintf("%s\n%s %s\n%s", welcomeMsg, tableAssignMsg, tableDirMsg, neighborMsg)
+	return msg
 }
 
 // Welcome to my party, Christiane!
