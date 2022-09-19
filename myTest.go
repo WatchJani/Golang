@@ -10,15 +10,17 @@ func WelcomeMessage(customer string) string {
 }
 
 func CleanupMessage(oldMsg string) string {
-	return strings.TrimSpace(strings.ReplaceAll(oldMsg, "*", "")) 
+	return strings.TrimSpace(strings.ReplaceAll(oldMsg, "*", ""))
 }
 
 func main() {
 	name := "Janko"
 
-	message := `**************************
+	message := `
+	**************************
 	*    BUY NOW, SAVE 10%   *
-	**************************`
+	**************************
+	`
 
 	fmt.Println(WelcomeMessage(name))
 	fmt.Println(CleanupMessage(message))
