@@ -49,22 +49,44 @@ func CountInRank(cb Chessboard, rank int) int {
 func CountAll(cb Chessboard) int {
 	var counter int 
 
-	// for _,value:= range cb{
-	// 	for _, data_:= range cb[value]{
-	// 	fmt.Println(data_)
-	// }
-	// }
+	for _,column:= range cb{
+		for range column{
+			counter++
+		}
+	}
 
 	return counter
 }
 
-// // CountOccupied returns how many squares are occupied in the chessboard.
-// func CountOccupied(cb Chessboard) int {
-	
-// }
+// CountOccupied returns how many squares are occupied in the chessboard.
+func CountOccupied(cb Chessboard) int {
+	var counter int 
+
+	for _,column:= range cb{
+		for _, row := range column{
+			if row == true{
+				counter++
+			}
+		}
+	}
+
+	return counter
+}
 
 
 func main(){
+
+	//   A B C D E F G H
+	// 8 # _ _ _ # _ _ # 8
+	// 7 _ _ _ _ _ _ _ _ 7
+	// 6 _ _ _ _ # _ _ # 6
+	// 5 _ # _ _ _ _ _ # 5
+	// 4 _ _ _ _ _ _ # # 4
+	// 3 # _ # _ _ _ _ # 3
+	// 2 _ _ _ _ _ _ _ # 2
+	// 1 # _ _ _ _ _ _ # 1
+	//   A B C D E F G H
+
 	var board Chessboard
 	board = map[string]File{
 		"A": File([]bool{true, false, true, false, false, false, false, true}),
